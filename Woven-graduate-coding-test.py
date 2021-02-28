@@ -11,32 +11,33 @@ import math
 import re
 x, y = 0, 0
 
+#Taking inputs: a string of comma-separated commands
 while True:
-    step = input("Input your command in the format: F/B/R/L#step number: ")
+    walk = input("Input your command in the format: F/B/R/L#distance of steps: ")
     break
 
 #To split the entire input string into a list of strings:
-indstep = step.split(",")
-print("The steps that you mentioned individually are:", indstep)
+walks = walk.split(",")
+print("The commands that you mentioned individually are:", walks)
   
 #To find individual lengths of distance traversed      
 l = []
 res=""
-for i in indstep:
+for i in walks:
     res = (re.findall(r'(\d+)', i)[0] )
     l.append(str(res))
 l = list(map(int, l))
 print("The indivisual step counts of each move respectively are",l)
 
      
-for j in range(0,len(indstep)):         
-    if re.search("F",indstep[j]):
+for j in range(0,len(walks)):         
+    if re.search("F",walks[j]):
         y = y + l[j]
-    elif re.search("B",indstep[j]):
+    elif re.search("B",walks[j]):
         y = y - (l[j])
-    elif re.search("L",indstep[j]):
+    elif re.search("L",walks[j]):
         x = x - (l[j])
-    elif re.search("R",indstep[j]):
+    elif re.search("R",walks[j]):
         x = x + (l[j])       
     else:
         print("Command not recognised")
@@ -44,5 +45,5 @@ for j in range(0,len(indstep)):
     
 c = math.sqrt(x**2 + y**2)
     
-print("Distance:", c)
+print("Output:the minimum amount of distance to get back to the starting point are:", c)
 
