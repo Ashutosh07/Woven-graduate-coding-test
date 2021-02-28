@@ -2,7 +2,10 @@
 """
 Created on Sun Feb 28 13:36:00 2021
 
+Finished on Sun Feb 28 15:57:00 2021
 @author: Ashutosh Shukla
+
+For Submission Purposes for Woven-graduate-coding-test
 """
 import math
 import re
@@ -24,18 +27,21 @@ for i in indstep:
     l.append(str(res))
 l = list(map(int, l))
 print("The indivisual step counts of each move respectively are",l)
-      
-for j in indstep:           
-    if re.search("F",j)
-    indstep[j] == "F":
-        y = y + int(l[j])
-    elif indstep[j] == "B":
-        y = y - int(l[j])
-    elif indstep[j] == "L":
-        x = x - int(l[j])
-    elif indstep[j] == "R":
-        x = x + int(l[j])
 
+     
+for j in range(0,len(indstep)):         
+    if re.search("F",indstep[j]):
+        y = y + l[j]
+    elif re.search("B",indstep[j]):
+        y = y - (l[j])
+    elif re.search("L",indstep[j]):
+        x = x - (l[j])
+    elif re.search("R",indstep[j]):
+        x = x + (l[j])       
+    else:
+        print("Command not recognised")
+
+    
 c = math.sqrt(x**2 + y**2)
     
 print("Distance:", c)
