@@ -1,30 +1,42 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 28 09:36:00 2021
+Created on Sun Feb 28 13:36:00 2021
 
 @author: Ashutosh Shukla
 """
 import math
+import re
 x, y = 0, 0
 
 while True:
     step = input("Input your command in the format: F/B/R/L#step number: ")
+    break
 
-    if step == "":
-        break
-
-    else:
-        step = step.split(" ")
-
-        if step[0] == "UP":
-            y = y + int(step[1])
-        elif step[0] == "DOWN":
-            y = y - int(step[1])
-        elif step[0] == "LEFT":
-            x = x - int(step[1])
-        elif step[0] == "RIGHT":
-            x = x + int(step[1])
+#To split the entire input string into a list of strings:
+indstep = step.split(",")
+print("The steps that you mentioned individually are:", indstep)
+  
+#To find individual lengths of distance traversed      
+l = []
+res=""
+for i in indstep:
+    res = (re.findall(r'(\d+)', i)[0] )
+    l.append(str(res))
+l = list(map(int, l))
+print("The indivisual step counts of each move respectively are",l)
+      
+for j in indstep:           
+    if re.search("F",j)
+    indstep[j] == "F":
+        y = y + int(l[j])
+    elif indstep[j] == "B":
+        y = y - int(l[j])
+    elif indstep[j] == "L":
+        x = x - int(l[j])
+    elif indstep[j] == "R":
+        x = x + int(l[j])
 
 c = math.sqrt(x**2 + y**2)
-
+    
 print("Distance:", c)
+
