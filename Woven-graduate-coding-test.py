@@ -45,5 +45,5 @@ for j in range(0,len(walks)):
     
 c = math.sqrt(x**2 + y**2)
     
-print("Output:the minimum amount of distance to get back to the starting point are:", c)
+print("Output:the minimum amount of distance to get back to the starting point are:", c,"units")
 
